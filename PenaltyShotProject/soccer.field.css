@@ -1,0 +1,96 @@
+@CHARSET "UTF-8";
+#sky{
+        width:1500px;
+        height:350px;
+        background-color:skyblue;
+    }
+
+#field{
+        width:1500px;
+        height:700px;
+        background-color:green;
+    }
+
+#goal{
+        width:500px;
+        height:500px;
+        position:absolute;
+        left:450px;
+        top:100px;
+        background:url('soccergoal.png') no-repeat center center;
+        background-size:contain;
+        z-index: 100;
+    }
+  
+#soccerball{
+        width:50px;
+        height:50px;
+        background:url('Soccerball.png') no-repeat center center;
+        background-size:contain;
+        position:absolute;
+        top:750px;
+        left:670px;
+        z-index:200;
+    }
+    
+#goalie{
+    width:150px;
+    height:300px;
+    background:url('goalie.png') no-repeat center center;
+    background-size:contain;
+    position:absolute;
+    top:280px;
+    left:625px;
+    z-index:100;
+}
+    
+#penaltybox{
+        width:1200px;
+        height:500px;
+        border:8px solid #fff;
+        position:absolute;
+        top:455px;
+        left:100px;
+        
+}
+
+#penaltyspot{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background-color:white;
+    top:750px;
+    left:670px;
+    position:absolute;
+}
+
+.placementofshot{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    border:3px solid #fff700;
+    position:absolute;
+    z-index:100;
+}
+
+#upperleft{
+    top:230px;
+    left:470px;
+}
+
+#lowerleft{
+    top:420px;
+    left:470px;
+}
+
+#upperright{
+    top:230px;
+    left:880px;
+}
+
+#lowerright{
+    top:420px;
+    left:880px;
+}
+
+    
