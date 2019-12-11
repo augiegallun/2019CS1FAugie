@@ -93,4 +93,17 @@
     left:880px;
 }
 
+#goalanimation{
+    height:100px;
+    width:500px;
+    position:absolute;
+    top: 600px;
+    left:500px;
+    color:black;
+    z-index:500;
+    display:none;
+    font-size:100px;
+}
+
+
     

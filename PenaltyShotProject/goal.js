@@ -15,29 +15,30 @@ function outcome(blockX, blockY, goalX, goalY){
     var goalieY = goaliePosition.top;
     
     if(distance(ballX, ballY, goalieX, goalieY) < 300){
-            TweenMax.to('#soccerball',.4,{x:blockX, y:blockY, delay:0.5, ease:Sine.easeOut});
+            TweenMax.to('#soccerball',.4,{x:blockX, y:blockY, delay:0.4, ease:Sine.easeOut});
             console.log("block");
+            
         }
         else{
-            TweenMax.to('#soccerball',.3,{x:goalX, y:goalY, delay:0.3, ease:Sine.easeOut});
+            TweenMax.to('#soccerball',.4,{x:goalX, y:goalY, delay:0.4, ease:Sine.easeOut});
             console.log("goal");
-            
+            $('#goalanimation').fadeIn();
         }
 };
 
 $('#lowerright').click(
     function(){
-        TweenMax.to('#soccerball',.4,{x:220, y:-320, delay:0.5, ease:Sine.easeOut, onComplete:outcome, onCompleteParams:[400, -400, 100, -300]});
+        TweenMax.to('#soccerball',.4,{x:220, y:-320, delay:0.4, ease:Sine.easeOut, onComplete:outcome, onCompleteParams:[400, -400, 100, -300]});
     });
 
 $('#upperleft').click(
     function(){
-        TweenMax.to('#soccerball',.5,{x:-205, y:-530, delay:0.5, ease:Sine.easeOut, onComplete:outcome, onCompleteParams:[-400, -310, -205, -310]});
+        TweenMax.to('#soccerball',.4,{x:-205, y:-530, delay:0.4, ease:Sine.easeOut, onComplete:outcome, onCompleteParams:[-400, -310, -205, -310]});
     });
     
 $('#lowerleft').click(
     function(){
-        TweenMax.to('#soccerball',.2,{x:-205, y:-310, delay:0.5, ease:Sine.easeOut, onComplete:outcome, onCompleteParams:[-325, -350, -50, -340]});
+        TweenMax.to('#soccerball',.4,{x:-205, y:-310, delay:0.4, ease:Sine.easeOut, onComplete:outcome, onCompleteParams:[-325, -350, -50, -340]});
     });
     
 $('#upperright').click(
