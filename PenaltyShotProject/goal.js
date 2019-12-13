@@ -1,3 +1,5 @@
+var goalsound = new Sound("goalsound.mp3");
+
 function distance(x1, y1, x2, y2){
     var sideA = Math.abs(x1-x2);
     var sideB = Math.abs(y1-y2);
@@ -23,8 +25,12 @@ function outcome(blockX, blockY, goalX, goalY){
             TweenMax.to('#soccerball',.4,{x:goalX, y:goalY, delay:0.4, ease:Sine.easeOut});
             console.log("goal");
             $('#goalanimation').fadeIn();
+            goalsound.play();
+            console.log("sound");
         }
 };
+
+
 
 $('#lowerright').click(
     function(){

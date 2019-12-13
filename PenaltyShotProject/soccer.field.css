@@ -51,7 +51,15 @@
         position:absolute;
         top:455px;
         left:100px;
-        
+}
+
+#sixyardbox{
+    width:600px;
+    height:200px;
+    border:8px solid #fff;
+    position: absolute;
+    top:455px;
+    left:390px;
 }
 
 #penaltyspot{
