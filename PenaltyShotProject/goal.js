@@ -1,4 +1,4 @@
-var goalsound = new Sound("goalsound.mp3");
+var goalsound = new Audio("goalsound.mp3");
 
 function distance(x1, y1, x2, y2){
     var sideA = Math.abs(x1-x2);
@@ -19,6 +19,8 @@ function outcome(blockX, blockY, goalX, goalY){
     if(distance(ballX, ballY, goalieX, goalieY) < 300){
             TweenMax.to('#soccerball',.4,{x:blockX, y:blockY, delay:0.4, ease:Sine.easeOut});
             console.log("block");
+            TweenMax.to('#soccerball',1,{x:0, y:0, delay:2, ease:Sine.easeOut});
+            TweenMax.to('#goalie',1,{x:0, y:0, delay:2, ease:Sine.easeOut});
             
         }
         else{
@@ -27,6 +29,9 @@ function outcome(blockX, blockY, goalX, goalY){
             $('#goalanimation').fadeIn();
             goalsound.play();
             console.log("sound");
+            TweenMax.to('#soccerball',1,{x:0, y:0, delay:10, ease:Sine.easeOut});
+            TweenMax.to('#goalie',1,{x:0, y:0, delay:10, ease:Sine.easeOut});
+            $('#goalanimation').fadeOut(10000);
         }
 };
 

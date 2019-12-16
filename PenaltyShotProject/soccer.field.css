@@ -113,5 +113,34 @@
     font-size:100px;
 }
 
+#scoreboard{
+    height:100px;
+    width:200px;
+    position:absolute;
+    top:50px;
+    left:100px;
+    background-color:black;
+    border-radius:10%;
+    border:8px solid #fff;
+    z-index:500;
+}
 
-    
+#Playerscore{
+    height:50px;
+    width:50px;
+    border-radius:50%;
+    background-color:yellow;
+    top:50%;
+    left:25%;
+    position:absolute;
+}
+
+#Goaliescore{
+    height:50px;
+    width:50px;
+    border-radius:50%;
+    background-color:yellow;
+    top:50%;
+    left:75%;
+    position:absolute;
+}
