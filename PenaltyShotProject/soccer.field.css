@@ -129,18 +129,43 @@
     height:50px;
     width:50px;
     border-radius:50%;
-    background-color:yellow;
+    background-color:white;
     top:50%;
     left:25%;
     position:absolute;
-}
+    color:black;
+    text-align:center;
+    font-size:40px;
+   }
 
 #Goaliescore{
     height:50px;
     width:50px;
     border-radius:50%;
-    background-color:yellow;
+    background-color:white;
     top:50%;
     left:75%;
     position:absolute;
+    color:black;
+    text-align:center;
+    font-size:40px;
+}
+#name1{
+    height:50px;
+    width:50px;
+    position:absolute;
+    text-align:justify;
+    top:30%;
+    left:28%;
+    color:white;
+}
+
+#name2{
+    height:50px;
+    width:50px;
+    position:absolute;
+    text-align:justify;
+    top:30%;
+    left:77%;
+    color:white;
 }
