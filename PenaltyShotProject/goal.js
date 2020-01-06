@@ -18,7 +18,7 @@ function outcome(blockX, blockY, goalX, goalY){
     var goalieX = goaliePosition.left;
     var goalieY = goaliePosition.top;
     
-    if(distance(ballX, ballY, goalieX, goalieY) < 300){
+    if(distance(ballX, ballY, goalieX, goalieY) < 100){
             TweenMax.to('#soccerball',.4,{x:blockX, y:blockY, delay:0.4, ease:Sine.easeOut});
             console.log("block");
             TweenMax.to('#soccerball',1,{x:0, y:0, delay:2, ease:Sine.easeOut});
@@ -33,9 +33,9 @@ function outcome(blockX, blockY, goalX, goalY){
             $('#goalanimation').fadeIn();
             goalsound.play();
             console.log("sound");
-            TweenMax.to('#soccerball',1,{x:0, y:0, delay:10, ease:Sine.easeOut});
-            TweenMax.to('#goalie',1,{x:0, y:0, delay:10, ease:Sine.easeOut});
-            $('#goalanimation').fadeOut(10000);
+            TweenMax.to('#soccerball',1,{x:0, y:0, delay:5, ease:Sine.easeOut});
+            TweenMax.to('#goalie',1,{x:0, y:0, delay:5, ease:Sine.easeOut});
+            $('#goalanimation').fadeOut(5000);
             score++;
             $('#Playerscore').text(score);
         }
@@ -60,7 +60,7 @@ $('#lowerleft').click(
     
 $('#upperright').click(
     function(){
-        TweenMax.to('#soccerball',.4,{x:205, y:-530, delay:0.4, ease:Sine.easeOut, onComplete:outcome, onCompleteParams:[-240, -530, 205, -320]});
+        TweenMax.to('#soccerball',.4,{x:205, y:-530, delay:0.4, ease:Sine.easeOut, onComplete:outcome, onCompleteParams:[400, -530, 205, -320]});
 });
 
 
@@ -73,18 +73,21 @@ $('.placementofshot').click(
             var xTarget = -225;
             
         }
+
         else{
             var xTarget = 225;
-        };
+        }
+    
+        var randN = Math.floor(Math.random() * 100);
         
         if(randN > 50){
             var yTarget = -100;
         }
         else{
             var yTarget = 0;
-        };
-        
-        
+        }
+            
         TweenMax.to('#goalie',.5,{x:xTarget, y:yTarget , delay:0.1, ease:Sine.easeOut});
     });
-
+$('.gameover').fadeIn()
+    
