@@ -38,6 +38,10 @@ function outcome(blockX, blockY, goalX, goalY){
             $('#goalanimation').fadeOut(5000);
             score++;
             $('#Playerscore').text(score);
+            if(score > 4){
+            $('.gameover').fadeIn();
+            console.log("gameover");
+            };
         }
 };
 
@@ -89,5 +93,9 @@ $('.placementofshot').click(
             
         TweenMax.to('#goalie',.5,{x:xTarget, y:yTarget , delay:0.1, ease:Sine.easeOut});
     });
-$('.gameover').fadeIn()
-    
+
+if(goaliescore > "4"){
+    $('.gameover').fadeIn();
+    console.log("gameover");
+    };
+

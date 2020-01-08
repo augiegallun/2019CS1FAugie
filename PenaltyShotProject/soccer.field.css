@@ -35,7 +35,7 @@
     
 #goalie{
     width:150px;
-    height:180px;
+    height:150px;
     background:url('goalie.png') no-repeat center center;
     background-size:contain;
     position:absolute;
