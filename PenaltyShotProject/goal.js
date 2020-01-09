@@ -1,4 +1,5 @@
 var goalsound = new Audio("goalsound.mp3");
+var gameover = new Audio("thats the game.mp3")
 var score = 0;
 var goaliescore = 0;
 
@@ -17,31 +18,50 @@ function outcome(blockX, blockY, goalX, goalY){
     var goaliePosition = goalie.position();
     var goalieX = goaliePosition.left;
     var goalieY = goaliePosition.top;
+
+    console.log(distance(ballX, ballY, goalieX, goalieY));
     
-    if(distance(ballX, ballY, goalieX, goalieY) < 100){
+        if(distance(ballX, ballY, goalieX, goalieY) < 133){
             TweenMax.to('#soccerball',.4,{x:blockX, y:blockY, delay:0.4, ease:Sine.easeOut});
             console.log("block");
             TweenMax.to('#soccerball',1,{x:0, y:0, delay:2, ease:Sine.easeOut});
             TweenMax.to('#goalie',1,{x:0, y:0, delay:2, ease:Sine.easeOut});
             goaliescore++;
             $('#Goaliescore').text(goaliescore);
+                if(goaliescore > 2){
+                    $('.gameover').fadeIn(5000);
+                    $('#youlose').fadeIn(5000);
+                    console.log("gameover");
+                    $('#Goaliescore').text(0);
+                    $('#Playerscore').text(0);
+                    $('.gameover').fadeOut(7000);
+                    $('youlose').fadeOut(7000);
+                    gameover.play();
+                    };
+
             
         }
         else{
             TweenMax.to('#soccerball',.4,{x:goalX, y:goalY, delay:0.4, ease:Sine.easeOut});
             console.log("goal");
             $('#goalanimation').fadeIn();
-            goalsound.play();
+            //goalsound.play();
             console.log("sound");
             TweenMax.to('#soccerball',1,{x:0, y:0, delay:5, ease:Sine.easeOut});
             TweenMax.to('#goalie',1,{x:0, y:0, delay:5, ease:Sine.easeOut});
-            $('#goalanimation').fadeOut(5000);
+            $('#goalanimation').fadeOut(2000);
             score++;
             $('#Playerscore').text(score);
-            if(score > 4){
-            $('.gameover').fadeIn();
-            console.log("gameover");
-            };
+                if(score > 4){
+                    $('.gameover').fadeIn(5000);
+                    $('#youwin').fadeIn(5000);
+                    console.log("gameover");
+                    $('#Playerscore').text(0);
+                    $('#Goaliescore').text(0);
+                    $('.gameover').fadeOut(5000);
+                    $('#youwin').fadeOut(5000);
+                    gameover.play();
+                    };
         }
 };
 
@@ -59,7 +79,7 @@ $('#upperleft').click(
     
 $('#lowerleft').click(
     function(){
-        TweenMax.to('#soccerball',.4,{x:-205, y:-310, delay:0.4, ease:Sine.easeOut, onComplete:outcome, onCompleteParams:[-325, -350, -50, -340]});
+        TweenMax.to('#soccerball',.4,{x:-205, y:-310, delay:0.4, ease:Sine.easeOut, onComplete:outcome, onCompleteParams:[-355, -350, -50, -340]});
     });
     
 $('#upperright').click(
@@ -74,12 +94,12 @@ $('.placementofshot').click(
         var randN = Math.floor(Math.random() * 100);
 
         if(randN > 50){
-            var xTarget = -225;
+            var xTarget = -235;
             
         }
 
         else{
-            var xTarget = 225;
+            var xTarget = 235;
         }
     
         var randN = Math.floor(Math.random() * 100);
@@ -88,14 +108,9 @@ $('.placementofshot').click(
             var yTarget = -100;
         }
         else{
-            var yTarget = 0;
+            var yTarget = 10;
         }
             
         TweenMax.to('#goalie',.5,{x:xTarget, y:yTarget , delay:0.1, ease:Sine.easeOut});
     });
-
-if(goaliescore > "4"){
-    $('.gameover').fadeIn();
-    console.log("gameover");
-    };
 
