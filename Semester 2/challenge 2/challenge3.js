@@ -3,15 +3,26 @@ function noVowels(message) {
     var string = "";
     for(var i=0; i<message.length; i++){
         var currentletter = message.charAt(i);
-        if(currentletter.indexOf(vowels) == -1){
-            return message += string
+        if(vowels.indexOf(currentletter)<0)
+            string += currentletter; 
         }
+    return string
     }
-}
+    
+
 
 message = "Hello, how are you?";
-console.log(noVowels(message));
+console.log(noVowels(message)); 
 
-//if(message.indexOf(vowels) == -1){
-      //  return message;
-   // }
+function everyOther(message,n){
+    var string = "";
+
+    for(var i=0; i<message.length; i+=n){
+        var fourthLetter = message.charAt(i);
+        string += fourthLetter;
+    }
+    return string
+}
+
+message = "what it do"
+console.log(everyOther(message, 3));
