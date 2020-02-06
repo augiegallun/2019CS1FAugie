@@ -1,6 +1,6 @@
 
 function morseCode(message) {
-    var string = "";
+    var morseMessage = "";
     var alphabet = [
         {letter:"a",morse:".-"},
         {letter:"b",morse:"-..."},
@@ -29,21 +29,34 @@ function morseCode(message) {
         {letter:"y",morse:"-.--"},
         {letter:"z",morse:"--.."}
     ];
+
+    for(var i=0; i<message.length; i++){
+        alphabet.message(i)
+        
+
+    }
     
-    console.log(alphabet[25].letter);
-    console.log(alphabet[0].morse);
-    
-function checkLetter(letterObject) {
-    var needle = alphabet.findIndex(letterObject)
-    return letterObject.letter == needle;
+
+
+    return morseMessage;
+
 };
 
-function myFunction() {
-    alphabet[needle].morse;
-}
+console.log(morseCode("Hello"));
 
-console.log(myfunction(message));
-message = "a"
+
+function checkLetter(alphabet) {
+
+}
+    //var needle = alphabet.findIndex(letterObject)
+    //return letterObject.letter == needle;
+
+//function myFunction() {
+    //alphabet[needle].morse;
+//}
+
+//console.log(morseCode(message));
+//message = "a"
    
  //for(var i=0; i<message.length; i++){
         //alphabet.charAt(i)
@@ -84,4 +97,4 @@ message = "a"
         "y" : "-.--",
         "z" : "--..",
         " " : "/",
-    };*/}
+    };*/
