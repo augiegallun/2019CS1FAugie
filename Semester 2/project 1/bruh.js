@@ -31,7 +31,7 @@ function morseCode(message) {
     ];
 
     for(var i=0; i<message.length; i++){
-        alphabet.message(i)
+        
         
 
     }
@@ -46,7 +46,7 @@ console.log(morseCode("Hello"));
 
 
 function checkLetter(alphabet) {
-
+    
 }
     //var needle = alphabet.findIndex(letterObject)
     //return letterObject.letter == needle;
