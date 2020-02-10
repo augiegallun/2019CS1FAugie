@@ -1,4 +1,3 @@
-
 function morseCode(message) {
     var morseMessage = "";
     var alphabet = [
@@ -27,14 +26,20 @@ function morseCode(message) {
         {letter:"w",morse:".--"},
         {letter:"x",morse:"-..-"},
         {letter:"y",morse:"-.--"},
-        {letter:"z",morse:"--.."}
+        {letter:"z",morse:"--.."},
+        {letter:" ",morse:"  "}
     ];
 
     for(var i=0; i<message.length; i++){
-        
-        
-
+        var currLetter = message.toLowerCase(i).charAt(i);
+        var letterIndex = alphabet.findIndex(
+            function (letterObject){
+                return currLetter == letterObject.letter;
+            });
+        console.log(letterIndex);
+        morseMessage += alphabet[letterIndex].morse+" ";
     }
+
     
 
 
@@ -42,59 +47,9 @@ function morseCode(message) {
 
 };
 
-console.log(morseCode("Hello"));
+console.log(morseCode("sos"));
 
 
-function checkLetter(alphabet) {
+
     
-}
-    //var needle = alphabet.findIndex(letterObject)
-    //return letterObject.letter == needle;
-
-//function myFunction() {
-    //alphabet[needle].morse;
-//}
-
-//console.log(morseCode(message));
-//message = "a"
    
- //for(var i=0; i<message.length; i++){
-        //alphabet.charAt(i)
-    //}
-    //return string
-    
-//}
-//console.log(morseCode("hello bro"));
-
-/*$(document).keydown(function(event) { 
-
-});*/
-/*var alphabet = {
-        "a" : ".-",
-        "b" : "-...",
-        "c" : "-.-.",
-        "d" : "-..",
-        "e" : ".",
-        "f" : "..-.",
-        "g" : "--.",
-        "h" : "....",
-        "i" : "..",
-        "j" : ".---",
-        "k" : "-.-",
-        "l" : ".-..",
-        "m" : "--",
-        "n" : "-.",
-        "o" : "---",
-        "p" : ".--.",
-        "q" : "--.-",
-        "r" : ".-.",
-        "s" : "...",
-        "t" : "-",
-        "u" : "..-",
-        "v" : "...-",
-        "w" : ".--",
-        "x" : "-..-",
-        "y" : "-.--",
-        "z" : "--..",
-        " " : "/",
-    };*/
