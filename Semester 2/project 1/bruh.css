@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+
+.sentenceBox{
+    height: 200px;
+    width: 500px;
+    background-color: rgb(255, 255, 255); 
+    border-radius: 8px;
+    border:8px solid rgb(119, 116, 116); 
+    left:400px;
+    position:absolute;
+    top:100px;
+}
+
+
+.morseCodeBox{
+    height: 200px;
+    width: 500px;
+    background-color: rgb(255, 255, 255); 
+    border-radius: 8px;
+    border:8px solid rgb(119, 116, 116); 
+    left:400px;
+    position:absolute;
+    top:700px;
+}
+
+
+[contentEditable=true]:empty:not(:focus):before{
+  content:attr(placeholder);
+  color:grey;
+  font-style:italic;
+}
