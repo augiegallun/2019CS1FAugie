@@ -35,7 +35,7 @@ function outcome(blockX, blockY, goalX, goalY){
                     $('#Goaliescore').text(0);
                     $('#Playerscore').text(0);
                     $('.gameover').fadeOut(7000);
-                    $('youlose').fadeOut(7000);
+                    $('#youlose').fadeOut(7000);
                     gameover.play();
                     };
 

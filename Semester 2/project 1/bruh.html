@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Functions Practice</title>
+        <title>Morse Code</title>
         <link rel='stylesheet' href='bruh.css'>
         <style></style>
+        <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
     </head>
 
-    <body>Open console to see results (command+option+i)
-    <div class='sentenceBox' placeholder="Enter Your Sentence:" contenteditable="true"> </div>
-    <div class='morseCodeBox'>Your Sentence In Morse Code:</div>
+    <body>
+        <div id='sentenceBox' contenteditable="true" placeholder="Enter Your Sentence:" ></div>
+        <div id='morseCodeBox'>Your Sentence In Morse Code:</div>
+        <div id='translateButton'>Submit</div>
     </body>
     <script src='bruh.js'></script>
 </html>

@@ -36,7 +36,7 @@ function morseCode(message) {
             function (letterObject){
                 return currLetter == letterObject.letter;
             });
-        console.log(letterIndex);
+        //console.log(letterIndex);
         morseMessage += alphabet[letterIndex].morse+" ";
     }
 
@@ -47,8 +47,12 @@ function morseCode(message) {
 
 };
 
-console.log(morseCode("sos"));
 
+$('#sentenceBox').keyup(
+    function(){
+        var originalMessage = $('#sentenceBox').text();
+        $('#morseCodeBox').text(morseCode(originalMessage))
+    });
 
 
     
