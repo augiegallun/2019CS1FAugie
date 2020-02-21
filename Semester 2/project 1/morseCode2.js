@@ -36,7 +36,6 @@ function decodeMorseCode(message){
         var currMorse = message.charAt(i);
         if(message.indexOf(currMorse) !== " "){
             block += currMorse;
-            $(block).text("");
             console.log(block);
         }
         else{
