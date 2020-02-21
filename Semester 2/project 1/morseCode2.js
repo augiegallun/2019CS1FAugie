@@ -30,17 +30,27 @@ function decodeMorseCode(message){
         {letter:" ",morse:"  "}
     ];
 
+    var block = "";
+
     for(var i=0; i<message.length; i++){
         var currMorse = message.charAt(i);
-        var morseIndex = alphabet.findIndex(
+        if(message.indexOf(currMorse) !== " "){
+            block += currMorse;
+            $(block).text("");
+            console.log(block);
+        }
+        else{
+            console.log(block);
+            var morseIndex = alphabet.findIndex(
             function (morseObject){
                 return currMorse == morseObject.morse;
             });
-        console.log(morseIndex);
-        morseMessage += alphabet[morseIndex].letter;
+            console.log(morseIndex);
+            morseMessage += alphabet[morseIndex].letter;
+        }   
+    }
+
+    return morseMessage;
 }
 
-        return morseMessage;
-}
-
-console.log(decodeMorseCode("-.-", "..", "--"))
+console.log(decodeMorseCode("... --- ..."));
