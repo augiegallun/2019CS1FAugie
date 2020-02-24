@@ -27,25 +27,27 @@ function decodeMorseCode(message){
         {letter:"x",morse:"-..-"},
         {letter:"y",morse:"-.--"},
         {letter:"z",morse:"--.."},
-        {letter:" ",morse:"  "}
+        {letter:" ",morse:" "}
     ];
 
     var block = "";
 
     for(var i=0; i<message.length; i++){
         var currMorse = message.charAt(i);
-        if(message.indexOf(currMorse) !== " "){
+        if(currMorse !== " " && i < message.length-1){
             block += currMorse;
-            console.log(block);
+            //console.log(block);
+            //block = "";
         }
         else{
             console.log(block);
             var morseIndex = alphabet.findIndex(
             function (morseObject){
-                return currMorse == morseObject.morse;
+                return block == morseObject.morse;
             });
             console.log(morseIndex);
             morseMessage += alphabet[morseIndex].letter;
+            block = "";
         }   
     }
 
