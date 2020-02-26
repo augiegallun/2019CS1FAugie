@@ -27,31 +27,42 @@ function decodeMorseCode(message){
         {letter:"x",morse:"-..-"},
         {letter:"y",morse:"-.--"},
         {letter:"z",morse:"--.."},
-        {letter:" ",morse:" "}
+        {letter:" ", morse:"  "}
     ];
 
     var block = "";
 
     for(var i=0; i<message.length; i++){
         var currMorse = message.charAt(i);
-        if(currMorse !== " " && i < message.length-1){
+        //console.log(i,currMorse);
+        if(i < message.length-1 && currMorse !== " "){
             block += currMorse;
             //console.log(block);
-            //block = "";
         }
         else{
-            console.log(block);
+            if(i == message.length-1)
+                block += currMorse;  
+            //console.log(i, block);
             var morseIndex = alphabet.findIndex(
             function (morseObject){
+                //if(currMorse == "  ") 
                 return block == morseObject.morse;
             });
             console.log(morseIndex);
             morseMessage += alphabet[morseIndex].letter;
             block = "";
-        }   
+        }
+        
+        
     }
 
     return morseMessage;
 }
 
 console.log(decodeMorseCode("... --- ..."));
+
+$('#sentenceBox').keyup(
+    function(){
+        var originalMessage = $('#sentenceBox').text();
+        $('#morseCodeBox').text(decodeMorseCode(originalMessage))
+    });
