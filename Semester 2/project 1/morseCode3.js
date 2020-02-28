@@ -32,40 +32,30 @@ function decodeMorseCode(message){
 
     var block = "";
 
-    for(var i=0; i<message.length; i++){
-        var currMorse = message.charAt(i);
-        //console.log(i,currMorse);
-        if(i < message.length-1 && currMorse !== " "){
-            block += currMorse;
-            //console.log(block);
+    var i = 0;
+
+    while(i < message.length){
+        if(currMorse !== " "){
+            i++;
+            var currMorse = message.charAt(i);
+            block += currMorse
         }
         else{
-            if(i == message.length-1)
-                block += currMorse;  
-            //console.log(i, block);
             var morseIndex = alphabet.findIndex(
             function (morseObject){
-                //if(currMorse == "  ") 
                 return block == morseObject.morse;
             });
             console.log(morseIndex);
             morseMessage += alphabet[morseIndex].letter;
             block = "";
-            var b = 0;
-            var e = 0;
-            message.substring(b,e)
+            while(currMorse == " " && i<message.length){
+                i++;
+                var currMorse = message.charAt(i);
+                block += currMorse;
+            }
         }
-        
-        
     }
-
     return morseMessage;
 }
 
 console.log(decodeMorseCode("... --- ..."));
-
-$('#sentenceBox').keyup(
-    function(){
-        var originalMessage = $('#sentenceBox').text();
-        $('#morseCodeBox').text(decodeMorseCode(originalMessage))
-    });
