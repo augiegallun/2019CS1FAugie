@@ -37,7 +37,7 @@ function decodeMorseCode(message){
         //console.log(i,currMorse);
         if(i < message.length-1 && currMorse !== " "){
             block += currMorse;
-            //console.log(block);
+            //console.log(block); 
         }
         else{
             if(i == message.length-1)

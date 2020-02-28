@@ -46,9 +46,10 @@ function decodeMorseCode(message){
                 return block == morseObject.morse;
             });
             console.log(morseIndex);
+            
             morseMessage += alphabet[morseIndex].letter;
             block = "";
-            while(currMorse == " " && i<message.length){
+            while(currMorse == " " && i < message.length){
                 i++;
                 var currMorse = message.charAt(i);
                 block += currMorse;
