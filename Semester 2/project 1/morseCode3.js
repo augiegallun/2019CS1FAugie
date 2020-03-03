@@ -32,15 +32,17 @@ function decodeMorseCode(message){
 
     var block = "";
 
-    var i = 0;
+    var b = 0;
+    var e = 0;
 
-    while(i < message.length){
+    while(e < message.length){
+        var currMorse = message.charAt(e); 
         if(currMorse !== " "){
-            i++;
-            var currMorse = message.charAt(i);
-            block += currMorse
+            e++;
         }
         else{
+            block += message.substring(b, e);
+            console.log(block)
             var morseIndex = alphabet.findIndex(
             function (morseObject){
                 return block == morseObject.morse;
@@ -49,14 +51,25 @@ function decodeMorseCode(message){
             
             morseMessage += alphabet[morseIndex].letter;
             block = "";
-            while(currMorse == " " && i < message.length){
-                i++;
-                var currMorse = message.charAt(i);
-                block += currMorse;
+            b = e; 
+            
+            while(currMorse == " " && b < message.length){
+                b++;
+                currMorse = message.charAt(b);
+                //console.log(b)
+                console.log(block)
             }
+            e=b;
         }
     }
     return morseMessage;
 }
 
 console.log(decodeMorseCode("... --- ..."));
+
+/*$('#sentenceBox').keyup(
+    function(){
+        var originalMessage = $('#sentenceBox').text();
+        $('#morseCodeBox').text(decodeMorseCode(originalMessage))
+    });
+    */
