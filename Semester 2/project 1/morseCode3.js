@@ -36,18 +36,41 @@ function decodeMorseCode(message){
     var e = 0;
 
     while(e < message.length){
+        //console.log(e)
         var currMorse = message.charAt(e); 
-        if(currMorse !== " "){
+        //console.log(currMorse)
+        if(currMorse !== " " && e < message.length-1){
             e++;
+            console.log(e)
+            
+            //this is for last "block"
+            /*if(e == message.length-1){
+                block += message.substring(b,e+1);
+                var morseIndex = alphabet.findIndex(
+                    function (morseObject){
+                        return block == morseObject.morse;
+                    });
+            //console.log(morseIndex);
+            
+            morseMessage += alphabet[morseIndex].letter;
+            block = "";
+            b = e; 
+            };
+*/
+
         }
         else{
-            block += message.substring(b, e);
+            if(e == message.length-1){
+                e++;
+                console.log(e)
+            }
+            block += message.substring(b,e);
             console.log(block)
             var morseIndex = alphabet.findIndex(
             function (morseObject){
                 return block == morseObject.morse;
             });
-            console.log(morseIndex);
+            //console.log(morseIndex);
             
             morseMessage += alphabet[morseIndex].letter;
             block = "";
@@ -56,20 +79,21 @@ function decodeMorseCode(message){
             while(currMorse == " " && b < message.length){
                 b++;
                 currMorse = message.charAt(b);
-                //console.log(b)
-                console.log(block)
+                //console.log(b,e)
+                //console.log(block)
+                block = "";
             }
-            e=b;
+            e = b;
         }
     }
     return morseMessage;
 }
 
-console.log(decodeMorseCode("... --- ..."));
+console.log(decodeMorseCode("...  --- ..."));
 
-/*$('#sentenceBox').keyup(
+$('#sentenceBox').keyup(
     function(){
         var originalMessage = $('#sentenceBox').text();
         $('#morseCodeBox').text(decodeMorseCode(originalMessage))
     });
-    */
+    
