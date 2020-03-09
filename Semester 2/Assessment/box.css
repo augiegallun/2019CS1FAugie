@@ -1,0 +1,125 @@
+@CHARSET "UTF-8";
+
+#box1{
+    width:200px;
+    height:100px;
+    border-radius:25px;
+    display:inline-block;
+    overflow: hidden;
+    text-align:center;
+    line-height:100px;
+    font-size:50px;
+    background-color:orange;
+    font-family:"kranky";
+    color:black;
+}
+
+#box2{
+    width:200px;
+    height:100px;
+    border-radius:25px;
+    display:inline-block;
+    overflow: hidden;
+    text-align:center;
+    line-height:100px;
+    font-size:50px; 
+    background-color:blue;
+    color:white;
+}
+
+#box3{
+    width:200px;
+    height:100px;
+    border-radius:25px;
+    display:inline-block;
+    overflow: hidden;
+    text-align:center;
+    line-height:100px;
+    font-size:50px;
+    background-color:red;
+    color:white;
+}
+
+#box4{
+    width:200px;
+    height:100px;
+    border-radius:25px;
+    display:inline-block;
+    overflow: hidden;
+    text-align:center;
+    line-height:100px;
+    font-size:50px;
+    background-color:red;
+    color:white;
+}
+
+#box5{
+    width:200px;
+    height:100px;
+    border-radius:25px;
+    display:inline-block;
+    overflow: hidden;
+    text-align:center;
+    line-height:100px;
+    font-size:50px; 
+    background-color:blue;
+    color:white;
+}
+
+#box6{
+   width:200px;
+    height:100px;
+    border-radius:25px;
+    display:inline-block;
+    overflow: hidden;
+    text-align:center;
+    line-height:100px;
+    font-size:50px;
+    background-color:orange;
+    font-family:"kranky";
+    color:black; 
+}
+
+#bar{
+    width:1225px;
+    height:50px;
+    border-radius:10px;
+    overflow: hidden;
+    text-align:right;
+    line-height:50px;
+    font-size:30px;
+    font-family:"kranky";
+    color:white;
+}
+
+.style1{
+    background-color:orange;
+    font-family:"kranky";
+    color:black;
+}
+
+
+
+.style2{
+    background-color:blue;
+    color:white;
+}
+
+.style3{
+    background-color:red;
+    color:white;
+}
+
+#bar{
+    width:1225px;
+    height:50px;
+    border-radius:10px;
+    background-color:blue;
+    overflow: hidden;
+    text-align:right;
+    line-height:50px;
+    font-size:30px;
+    font-family:"kranky";
+    color:white;
+}
+
